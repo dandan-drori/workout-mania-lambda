@@ -1,0 +1,28 @@
+{
+  "name": "netlify-lambda-functions-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify-lambda serve src",
+    "build": "netlify-lambda build src",
+    "dev": "cd src && nodemon api.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.747.0",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0",
+    "netlify-lambda": "^2.0.1",
+    "nodemon": "^2.0.4",
+    "serverless-http": "^2.5.0",
+    "webpack": "^4.44.1"
+  }
+}
