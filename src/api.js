@@ -7,7 +7,7 @@ require('dotenv').config()
 const port = process.env.PORT || 8000
 const mongoose = require('mongoose')
 const uri = `mongodb+srv://Dandan:${process.env.MONGODB_PASSWORD}@workouts.iw0b9.mongodb.net/${process.env.MONGODB_DBNAME}?retryWrites=true&w=majority`
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log("MongoDB connected")).catch(err => console.log(err))
 mongoose.Promise = global.Promise
 const app = express()
 
