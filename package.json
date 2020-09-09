@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "netlify-lambda serve src",
+    "postinstall": "netlify-lambda install",
     "build": "netlify-lambda build src",
     "dev": "cd src && nodemon api.js"
   },

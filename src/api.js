@@ -7,11 +7,18 @@ require('dotenv').config()
 const port = process.env.PORT || 8000
 const mongoose = require('mongoose')
 const uri = `mongodb+srv://Dandan:${process.env.MONGODB_PASSWORD}@workouts.iw0b9.mongodb.net/${process.env.MONGODB_DBNAME}?retryWrites=true&w=majority`
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log("MongoDB connected")).catch(err => console.log(err))
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = global.Promise
 const app = express()
 
 // app.use('/.netlify/functions/api/users', usersRoutes)
+const router = express.Router()
+
+router.get('/', (req,res) => {
+	res.status(200)
+})
+
+app.use('/.netlify/functions/hello', router)
 app.use('/.netlify/functions/api/workouts', workoutsRoutes)
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
