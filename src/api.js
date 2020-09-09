@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const serverless = require('serverless-http')
-const usersRoutes = require('../routes/users')
+// const usersRoutes = require('../routes/users')
 const workoutsRoutes = require('../routes/workouts')
 require('dotenv').config()
 const port = process.env.PORT || 8000
@@ -11,7 +11,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = global.Promise
 const app = express()
 
-app.use('/.netlify/functions/api/users', usersRoutes)
+// app.use('/.netlify/functions/api/users', usersRoutes)
 app.use('/.netlify/functions/api/workouts', workoutsRoutes)
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
